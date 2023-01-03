@@ -1,0 +1,95 @@
+<body>
+    
+    <h1>Tabla de platos</h1>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Fecha creada</th>
+                    <th scope="col">Inicio actividad</th>
+                    <th scope="col">Editar/Eliminar</th>
+    
+    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pla of Platoservice.platos">
+                    <th scope="row">1</th>
+                    <td>{{pla.Nombre}}</td>
+                    <td>{{pla.Precio}}</td>
+                    <td>{{pla.Color}}</td>
+                    <td>{{pla.Inicio_Actividad}}</td>
+                    <td>{{pla.createdAt}}</td>
+                    <td><button class="btn btn-outline-primary btn-sm">
+                            <span>Editar</span>
+                        </button>
+                        <button class="btn btn-outline-danger btn-sm">
+                            <span>Eliminar</span>
+                        </button>
+                    </td>
+                </tr>
+    
+            </tbody>
+        </table>
+    
+        
+        <!-- Formulario -->
+    
+        <div>
+            <h1>Formulario</h1>
+    
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <form #platoform="ngForm" (ngSubmit)="addplato(platoform)">
+                                <div class="form-group">
+                                    <input name="Nombre" [(ngModel)]="Platoservice.selectplato.Nombre" type="text"
+                                        class="form-control" placeholder="Ingresa el nombre">
+                                </div>
+    
+                                <div class="form-group">
+                                    <input name="Precio" [(ngModel)]="Platoservice.selectplato.Precio" type="text"
+                                        class="form-control" placeholder="Ingresa el precio">
+                                </div>
+    
+                                <div class="form-group">
+                                    <input name="Color" [(ngModel)]="Platoservice.selectplato.Color" type="text"
+                                        class="form-control" placeholder="Ingresa el color">
+                                </div>
+    
+                                <div class="form-group">
+                                    <input name="Inicio_Actividad" [(ngModel)]="Platoservice.selectplato.Inicio_Actividad" type="date"
+                                        class="form-control">
+                                </div>
+    
+    
+                                <div style="text-align: center">
+                                    <hr>
+                                    <button class="btn btn-primary">
+                                        Crear Plato
+                                    </button>
+                                </div>
+    
+                            </form>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+            </div>
+        </div>
+    
+        <!-- Fin formulario -->
+    
+    <!-- modal -->
+    
+    
+    </div>
+    </body>
